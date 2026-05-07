@@ -5,7 +5,7 @@
 #include <ctype.h>
 
 /*
-Challenge 'Super Trunfo' - Countries (theme)
+Challenge Top Trumps - Countries (theme)
 */
 
 /*

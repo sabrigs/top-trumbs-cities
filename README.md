@@ -46,7 +46,7 @@ Because of that, the final version uses:
 
 This helped keep the focus on core introductory concepts instead of prematurely introducing advanced memory management.
 
----
+
 
 # Game logic
 
@@ -71,7 +71,7 @@ H --> I[Display Winner]
 I --> J[End]
 ```
 
----
+
 
 # Card structure
 
@@ -85,14 +85,14 @@ Each card contains:
 | pop            | Population                    |
 | places         | Touristic places              |
 | area           | City area                     |
-| gdp            | Gross Domestic Product        |
+| pib            | Gross Domestic Product        |
 | pop_density    | Calculated population density |
-| gdp_per_capita | Calculated GDP per capita     |
+| pib_per_capita | Calculated GDP per capita     |
 | spower         | Combined "super power" score  |
 
 The project uses a `struct` to group all card data into a single entity.
 
----
+
 
 # Technologies and concepts used
 
@@ -106,7 +106,7 @@ typedef struct card
 
 This allows all card attributes to stay grouped together and makes function communication cleaner.
 
----
+
 
 ## Functions
 
@@ -141,8 +141,6 @@ The project was separated into small specialized functions.
 
 This separation helped avoid large blocks of code inside `main()` and improved readability during development.
 
----
-
 ## Control structures
 
 ### switch
@@ -158,8 +156,6 @@ Example:
 switch (fight_field)
 ```
 
----
-
 ## if
 
 Used in comparison functions to determine the winner.
@@ -169,8 +165,6 @@ Example:
 ```c id="k29v8p"
 if (a.pop > b.pop)
 ```
-
----
 
 ## Random generation
 
@@ -182,22 +176,16 @@ rand()
 
 to generate random attributes.
 
----
-
 # Future improvements & Study backlog
-
-The items below represent possible improvements and future study paths for the project.
-
-# 🚀 Future Improvements / Study Backlog
 
 The table below represents possible improvements and future study paths for the project.
 
-| Category             | Possible Improvements                                                                                                                                                                                     | Topics to Study                                                |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Input Validation     | - [ ] Validate invalid numeric input<br>- [ ] Prevent negative values<br>- [ ] Protect against division by zero<br>- [ ] Validate string size before storing<br>- [ ] Study safer alternatives to `scanf` | Buffer handling<br>Defensive programming<br>Input sanitization |
-| Code Reusability     | - [ ] Create a generic comparison function<br>- [ ] Reduce duplicated `winner_*()` logic<br>- [ ] Explore enums for attribute selection                                                                   | Abstraction<br>Generic functions<br>Enums in C                 |
-| Game Flow            | - [ ] Add "play again" loop<br>- [ ] Create main menu loop<br>- [ ] Add score system<br>- [ ] Add multiple battle rounds                                                                                  | Loops<br>State management<br>Game flow architecture            |
-| Data Organization    | - [ ] Generate different cities and states<br>- [ ] Create external card database<br>- [ ] Load cards from files                                                                                          | File handling<br>CSV/TXT parsing<br>Dynamic data               |
-| Project Architecture | - [ ] Split code into `.h` and `.c` files<br>- [ ] Create modules for game/card/utils<br>- [ ] Organize project folders                                                                                   | Modularization<br>Header files<br>Compilation process          |
-| Game Balance         | - [ ] Improve super power formula<br>- [ ] Normalize attribute scales<br>- [ ] Add weighted scoring system                                                                                                | Balancing systems<br>Normalization<br>Game design logic        |
-| User Experience      | - [ ] Improve terminal layout<br>- [ ] Add colors to interface<br>- [ ] Add animations/loading effects<br>- [ ] Improve text formatting                                                                   | Terminal UX<br>ANSI escape codes<br>CLI design                 |
+| Category             | Possible Improvements                                                                                                                                                                 | Topics to Study                                                |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Input Validation     | • Validate invalid numeric input<br>• Prevent negative values<br>• Protect against division by zero<br>• Validate string size before storing<br>• Study safer alternatives to `scanf` | Buffer handling<br>Defensive programming<br>Input sanitization |
+| Code Reusability     | • Create a generic comparison function<br>• Reduce duplicated `winner_*()` logic<br>• Explore enums for attribute selection                                                           | Abstraction<br>Generic functions<br>Enums in C                 |
+| Game Flow            | • Add "play again" loop<br>• Create main menu loop<br>• Add score system<br>• Add multiple battle rounds                                                                              | Loops<br>State management<br>Game flow architecture            |
+| Data Organization    | • Generate different cities and states<br>• Create external card database<br>• Load cards from files                                                                                  | File handling<br>CSV/TXT parsing<br>Dynamic data               |
+| Project Architecture | • Split code into `.h` and `.c` files<br>• Create modules for game/card/utils<br>• Organize project folders                                                                           | Modularization<br>Header files<br>Compilation process          |
+| Game Balance         | • Improve super power formula<br>• Normalize attribute scales<br>• Add weighted scoring system                                                                                        | Balancing systems<br>Normalization<br>Game design logic        |
+| User Experience      | • Improve terminal layout<br>• Add colors to interface<br>• Add animations/loading effects<br>• Improve text formatting                                                               | Terminal UX<br>ANSI escape codes<br>CLI design                 |
